@@ -1,0 +1,161 @@
+import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
+export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+const defaultOptions = {} as const;
+/** All built-in and custom scalars, mapped to their actual values */
+export type Scalars = {
+  ID: string;
+  String: string;
+  Boolean: boolean;
+  Int: number;
+  Float: number;
+};
+
+export type ContentDetails = {
+  __typename?: 'ContentDetails';
+  duration?: Maybe<Scalars['String']>;
+};
+
+export type Id = {
+  __typename?: 'Id';
+  videoId?: Maybe<Scalars['ID']>;
+};
+
+export type Query = {
+  __typename?: 'Query';
+  searchVideos?: Maybe<Array<Maybe<Video>>>;
+};
+
+export type Snippet = {
+  __typename?: 'Snippet';
+  channelId?: Maybe<Scalars['ID']>;
+  channelThumbnail?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  thumbnails?: Maybe<Thumnails>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type Statistics = {
+  __typename?: 'Statistics';
+  likeCount?: Maybe<Scalars['String']>;
+  viewCount?: Maybe<Scalars['String']>;
+};
+
+export type Thumnail = {
+  __typename?: 'Thumnail';
+  height?: Maybe<Scalars['Int']>;
+  url?: Maybe<Scalars['String']>;
+  width?: Maybe<Scalars['Int']>;
+};
+
+export type Thumnails = {
+  __typename?: 'Thumnails';
+  default?: Maybe<Thumnail>;
+  high?: Maybe<Thumnail>;
+  medium?: Maybe<Thumnail>;
+};
+
+export type Video = {
+  __typename?: 'Video';
+  id?: Maybe<Id>;
+  infos?: Maybe<VideoInfos>;
+  snippet?: Maybe<Snippet>;
+  url?: Maybe<Scalars['String']>;
+};
+
+export type VideoInfos = {
+  __typename?: 'VideoInfos';
+  contentDetails?: Maybe<ContentDetails>;
+  statistics?: Maybe<Statistics>;
+};
+
+export type QueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type QueryQuery = { __typename?: 'Query', searchVideos?: Array<{ __typename?: 'Video', url?: string | null, infos?: { __typename?: 'VideoInfos', contentDetails?: { __typename?: 'ContentDetails', duration?: string | null } | null, statistics?: { __typename?: 'Statistics', viewCount?: string | null, likeCount?: string | null } | null } | null, id?: { __typename?: 'Id', videoId?: string | null } | null, snippet?: { __typename?: 'Snippet', channelId?: string | null, channelThumbnail?: string | null, title?: string | null, description?: string | null, thumbnails?: { __typename?: 'Thumnails', default?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null, medium?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null, high?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null> | null };
+
+
+export const QueryDocument = gql`
+    query Query {
+  searchVideos {
+    infos {
+      contentDetails {
+        duration
+      }
+      statistics {
+        viewCount
+        likeCount
+      }
+    }
+    url
+    id {
+      videoId
+    }
+    snippet {
+      channelId
+      channelThumbnail
+      title
+      description
+      thumbnails {
+        default {
+          url
+          width
+          height
+        }
+        medium {
+          url
+          width
+          height
+        }
+        high {
+          url
+          width
+          height
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useQueryQuery__
+ *
+ * To run a query within a React component, call `useQueryQuery` and pass it any options that fit your needs.
+ * When your component renders, `useQueryQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useQueryQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useQueryQuery(baseOptions?: Apollo.QueryHookOptions<QueryQuery, QueryQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<QueryQuery, QueryQueryVariables>(QueryDocument, options);
+      }
+export function useQueryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QueryQuery, QueryQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<QueryQuery, QueryQueryVariables>(QueryDocument, options);
+        }
+export type QueryQueryHookResult = ReturnType<typeof useQueryQuery>;
+export type QueryLazyQueryHookResult = ReturnType<typeof useQueryLazyQuery>;
+export type QueryQueryResult = Apollo.QueryResult<QueryQuery, QueryQueryVariables>;
+
+      export interface PossibleTypesResultData {
+        possibleTypes: {
+          [key: string]: string[]
+        }
+      }
+      const result: PossibleTypesResultData = {
+  "possibleTypes": {}
+};
+      export default result;
+    

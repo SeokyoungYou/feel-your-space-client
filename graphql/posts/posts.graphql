@@ -1,0 +1,44 @@
+# graphql code generator를 사용하여 자동으로 TS interface 생성할 것임
+# npm run generate-types
+#.generated.tsx
+
+query Query {
+  searchVideos {
+    infos {
+      contentDetails {
+        duration
+      }
+      statistics {
+        viewCount
+        likeCount
+      }
+    }
+    url
+    id {
+      videoId
+    }
+    snippet {
+      channelId
+      channelThumbnail
+      title
+      description
+      thumbnails {
+        default {
+          url
+          width
+          height
+        }
+        medium {
+          url
+          width
+          height
+        }
+        high {
+          url
+          width
+          height
+        }
+      }
+    }
+  }
+}
