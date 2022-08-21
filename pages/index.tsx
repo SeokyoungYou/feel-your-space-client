@@ -1,14 +1,10 @@
 import { useQuery } from "@apollo/client";
-import {
-  QueryDocument,
-  QueryQuery,
-  QueryQueryVariables,
-  useQueryQuery,
-} from "generated";
+import { useGetVideoInfosQuery } from "generated";
+
 import { NextPage } from "next";
 
 const Home: NextPage = () => {
-  const { data, error, loading } = useQueryQuery();
+  const { data, error, loading } = useGetVideoInfosQuery();
 
   // if (loading) return <div>Loading...</div>;
   // if (error) return <div>{error?.message}</div>;

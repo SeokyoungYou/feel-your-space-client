@@ -2,7 +2,7 @@
 # npm run generate-types
 #.generated.tsx
 
-query Query {
+query GetVideoInfos {
   searchVideos {
     infos {
       contentDetails {

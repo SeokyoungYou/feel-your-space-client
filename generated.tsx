@@ -73,14 +73,14 @@ export type VideoInfos = {
   statistics?: Maybe<Statistics>;
 };
 
-export type QueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetVideoInfosQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type QueryQuery = { __typename?: 'Query', searchVideos?: Array<{ __typename?: 'Video', url?: string | null, infos?: { __typename?: 'VideoInfos', contentDetails?: { __typename?: 'ContentDetails', duration?: string | null } | null, statistics?: { __typename?: 'Statistics', viewCount?: string | null, likeCount?: string | null } | null } | null, id?: { __typename?: 'Id', videoId?: string | null } | null, snippet?: { __typename?: 'Snippet', channelId?: string | null, channelThumbnail?: string | null, title?: string | null, description?: string | null, thumbnails?: { __typename?: 'Thumnails', default?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null, medium?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null, high?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null> | null };
+export type GetVideoInfosQuery = { __typename?: 'Query', searchVideos?: Array<{ __typename?: 'Video', url?: string | null, infos?: { __typename?: 'VideoInfos', contentDetails?: { __typename?: 'ContentDetails', duration?: string | null } | null, statistics?: { __typename?: 'Statistics', viewCount?: string | null, likeCount?: string | null } | null } | null, id?: { __typename?: 'Id', videoId?: string | null } | null, snippet?: { __typename?: 'Snippet', channelId?: string | null, channelThumbnail?: string | null, title?: string | null, description?: string | null, thumbnails?: { __typename?: 'Thumnails', default?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null, medium?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null, high?: { __typename?: 'Thumnail', url?: string | null, width?: number | null, height?: number | null } | null } | null } | null } | null> | null };
 
 
-export const QueryDocument = gql`
-    query Query {
+export const GetVideoInfosDocument = gql`
+    query GetVideoInfos {
   searchVideos {
     infos {
       contentDetails {
@@ -123,31 +123,31 @@ export const QueryDocument = gql`
     `;
 
 /**
- * __useQueryQuery__
+ * __useGetVideoInfosQuery__
  *
- * To run a query within a React component, call `useQueryQuery` and pass it any options that fit your needs.
- * When your component renders, `useQueryQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetVideoInfosQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetVideoInfosQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useQueryQuery({
+ * const { data, loading, error } = useGetVideoInfosQuery({
  *   variables: {
  *   },
  * });
  */
-export function useQueryQuery(baseOptions?: Apollo.QueryHookOptions<QueryQuery, QueryQueryVariables>) {
+export function useGetVideoInfosQuery(baseOptions?: Apollo.QueryHookOptions<GetVideoInfosQuery, GetVideoInfosQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<QueryQuery, QueryQueryVariables>(QueryDocument, options);
+        return Apollo.useQuery<GetVideoInfosQuery, GetVideoInfosQueryVariables>(GetVideoInfosDocument, options);
       }
-export function useQueryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<QueryQuery, QueryQueryVariables>) {
+export function useGetVideoInfosLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetVideoInfosQuery, GetVideoInfosQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<QueryQuery, QueryQueryVariables>(QueryDocument, options);
+          return Apollo.useLazyQuery<GetVideoInfosQuery, GetVideoInfosQueryVariables>(GetVideoInfosDocument, options);
         }
-export type QueryQueryHookResult = ReturnType<typeof useQueryQuery>;
-export type QueryLazyQueryHookResult = ReturnType<typeof useQueryLazyQuery>;
-export type QueryQueryResult = Apollo.QueryResult<QueryQuery, QueryQueryVariables>;
+export type GetVideoInfosQueryHookResult = ReturnType<typeof useGetVideoInfosQuery>;
+export type GetVideoInfosLazyQueryHookResult = ReturnType<typeof useGetVideoInfosLazyQuery>;
+export type GetVideoInfosQueryResult = Apollo.QueryResult<GetVideoInfosQuery, GetVideoInfosQueryVariables>;
 
       export interface PossibleTypesResultData {
         possibleTypes: {
