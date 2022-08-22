@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <NextApolloProvider>
       <div className="flex flex-col w-screen h-screen lg:flex-row">
-        <div className="flex flex-col items-center bg-myGray text-myNavy h-3/5 lg:h-screen lg:w-2/5 2xl:w-1/3">
+        <div className="flex flex-col items-center bg-myGray text-myNavy h-3/5 lg:h-screen lg:w-2/5 xl:w-1/3">
           <nav className="relative flex justify-between h-20 px-5 -mt-4 overflow-hidden border-b-2 w-80 border-b-myNavy">
             <NavButton href="/" title="HOME" />
             <NavButton href="/trending" title="TRENDING" />
