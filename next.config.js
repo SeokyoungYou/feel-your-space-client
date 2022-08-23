@@ -4,4 +4,8 @@ const nextConfig = {
   swcMinify: true,
 };
 
-module.exports = nextConfig;
+module.exports = {
+  images: {
+    domains: ["yt3.ggpht.com", "i.ytimg.com"],
+  },
+};

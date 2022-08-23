@@ -10,7 +10,7 @@ export default function Title() {
         <div className="flex items-center mt-1">
           <h1 className="text-5xl ">Fill your</h1>
           {/* change search div to input tag */}
-          <div className="flex items-center w-56 h-10 gap-1 pl-1 ml-2 border-2 rounded-lg text-opacity-60 text-myLightNavy text-md border-myNavy">
+          <div className="flex items-center w-56 h-10 gap-1 pl-1 ml-3 border-2 rounded-lg text-opacity-60 text-myLightNavy text-md border-myNavy">
             <FontAwesomeIcon icon={faSearch} />
             <span>Search</span>
           </div>
