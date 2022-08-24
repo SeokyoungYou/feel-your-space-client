@@ -19,6 +19,9 @@ module.exports = {
       fontFamily: {
         sans: ["Philosopher", "sans-serif"],
       },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
     },
   },
   plugins: [
