@@ -12,6 +12,7 @@ export default function Title() {
           {/* change search div to input tag */}
           <div className="flex items-center w-56 h-10 gap-1 pl-1 ml-3 border-2 rounded-lg text-opacity-60 text-myLightNavy text-md border-myNavy">
             <FontAwesomeIcon icon={faSearch} />
+            {/* ✉️ Implement real search bar component */}
             <span>Search</span>
           </div>
         </div>

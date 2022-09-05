@@ -1,6 +1,7 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { PropsWithChildren } from "react";
 
+// feel-your-space-server
 const GRAPHQL_ENDPOINT = "http://localhost:4000/";
 
 const NextApolloProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {

@@ -9,16 +9,14 @@ import { homeIntroState } from "states";
 export default function HomeIntro() {
   const router = useRouter();
   const isHome = router.pathname === "/";
-
+  // first visit: true, others: false
   const [isHomeIntro, setHomeIntro] = useRecoilState(homeIntroState);
-  // useEffect(() => {
-  //   setHomeIntro(true);
-  // }, []);
-  const skipClicked = () => {
+  const homeBtnClicked = () => {
     setHomeIntro(false);
   };
   return (
     <>
+      {/* Turn on HomeIntro at first visit on Home url  */}
       {isHome && isHomeIntro ? (
         <div
           id="home-intro"
@@ -46,16 +44,18 @@ export default function HomeIntro() {
             <div className=" text-myGray">Feel your space</div>
           </div>
           <div className="absolute flex justify-center w-screen gap-10 text-lg lg:text-2xl bottom-20 lg:gap-32 lg:bottom-28">
+            {/* To trending page  */}
             <Link href="/trending">
               <a
-                onClick={skipClicked}
+                onClick={homeBtnClicked}
                 className="w-48 py-2 text-center border-2 rounded-md bg-opacity-20 border-myGray text-myGray bg-myGray"
               >
                 about us
               </a>
             </Link>
+            {/* To Home page */}
             <button
-              onClick={skipClicked}
+              onClick={homeBtnClicked}
               className="w-48 py-2 border-2 rounded-md bg-opacity-20 border-myGray text-myGray bg-myGray"
             >
               skip
